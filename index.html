@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="">
+  <meta property="og:title" content="GUILD: Guided Iterative Data Collection for Imitation Learning"/>
+  <meta property="og:description" content="GUILD: Guided Iterative Data Collection for Imitation Learning"/>
+  <meta property="og:url" content=""/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+
+
+  <meta name="twitter:title" content="GUILD: Guided Iterative Data Collection for Imitation Learning">
+  <meta name="twitter:description" content="GUILD: Guided Iterative Data Collection for Imitation Learning">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- <meta name="twitter:image" content="">
+  <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Guided Data Collection, Data Attribution, Imitation Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Guided Iterative Data Collection for Imitation Learning</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- <h1 class="title is-1 publication-title"></h1> -->
+            <h1 class="title is-1 publication-title"><span style="color:#1e5790; font-weight: 900;">GUILD</span></h1>
+            <h2 class="subtitle is-2 publication-subtitle">Guided Iterative Data Collection for Imitation Learning</h2>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://shivindass.github.io/" target="_blank">Shivin Dass</a>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/kevin-nguyen-ut" target="_blank">Kevin Nguyen</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/rohan-yelandur" target="_blank">Rohan Yelandur</a><sup>*</sup>,</span>
+              <br>
+              <span class="author-block">
+                  <a href="https://junhongxu.github.io/" target="_blank">Junhong Xu</a>,</span>
+              <span class="author-block">
+                <a href="https://robertomartinmartin.com/" target="_blank">Roberto Martín-Martín</a></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup><font size="-0.4">*</font></sup>
+                <font size="-0.4">Equal Contribution</font>
+              </span>
+            </div> 
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">The University of Texas at Austin
+                <br> CoRL, 2026
+              </span>
+              <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">TL;DR</h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths is-centered has-text-centered">
+        <div class="content has-text-justified">
+          <p>
+            Imitation learning policies in robotics are trained on datasets collected through costly real-world teleoperation. 
+            Often, the data-collection process is unguided, relying on the teleoperator's intuition, resulting in data that contributes little to overall policy performance. 
+            Recent work has shown that curating such unguided datasets can substantially improve policy performance, but these approaches operate by filtering existing datasets after collection and therefore do not prevent the acquisition of uninformative data. 
+            In this work, we propose GUILD, a novel Guided Data Collection (GDC) method that actively reasons about which data should be collected to maximize downstream policy performance.
+            We introduce an iterative framework that alternates between 1) task proposal and data collection and 2) data evaluation to close the loop. 
+            For task proposal, we leverage semantic priors from vision-language models to identify relevant environments, object configurations, and goals for data collection. 
+            However, since semantic relevance does not imply policy improvement, we perform data evaluation. By leveraging predictive data attribution we approximate how the collected trajectories influence policy performance on a target deployment setting. 
+            This signal is then used as feedback to guide subsequent data collection, closing the data collection loop. 
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <video poster="" id="tree" autoplay controls muted loop height="60%">
+              <source src="static/videos/gdg_video.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container">
+    <!-- <h2 class="title is-2" style="text-align: center;">GUILD: <span style="color:#1e5790; font-weight: 900;">G</span>uided <span style="color:#1e5790; font-weight: 900;">I</span>terative Imitation  <span style="color:#1e5790; font-weight: 900;">L</span>earning <span style="color:#1e5790; font-weight: 900;">D</span>ata Collection</h2> -->
+    <h2 class="title is-2" style="text-align: center;"><span style="color:#1e5790; font-weight: 900;">GUILD</span> Summary</h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths is-centered has-text-centered">
+        <div class="content has-text-justified">
+          <p>
+            GUILD operates in an iterative loop that alternates between task proposal and data collection, and data evaluation. 
+            For task proposal, GUILD leverages semantic priors from vision-language models to identify relevant environments, object configurations, and goals for data collection. 
+            However, since semantic relevance does not necessarily imply policy improvement, GUILD performs data evaluation by leveraging predictive data attribution to approximate how the collected trajectories influence policy performance on a target deployment setting. 
+            This signal is then used as feedback to guide subsequent data collection, closing the data collection loop.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <img src="static/images/gdg_overall.png" alt="overall" width="100%">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Simulating Data Collection via <span style="color:#1e5790; font-weight: 900;">GUILD</span></h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths is-centered has-text-centered">\
+        <div class="content has-text-justified">
+          <p>
+            We show a few steps of the GUILD data collection loop to give an insight into how it operates.
+            In the first step of task proposal, GUILD creates an initial support set of commonsense-grounded tasks using a VLM and available information about the target task as well as training task assets and available objects.
+            
+            Since the initial proposals are merely a guess, we then perform data evaluation by using predictive data attribution to estimate how the collected trajectories influence policy performance on the target deployment setting.
+            The data evaluation step identifies which tasks are important from the support set providing more granular feedback to the data collector on which tasks to collect data on in the next iteration.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <video poster="" id="tree" autoplay controls muted loop height="60%">
+              <source src="static/videos/gdg_sim.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;"><span style="color:#1e5790; font-weight: 900;">Real-World</span> Results</h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths is-centered has-text-centered">
+        <div class="content has-text-justified">
+          <p>
+            We design 6 real-world scenes with different objects, layouts, and backgrounds.
+            Given a target task in a deployment setting, we generate data from the remaining scenes using GUILD and a set of baselines. 
+            We then evaluate the performance of policies trained on this data in the target deployment setting.
+            Across both the simulation (see paper) and real-world settings, we find that GUILD outperforms other baselines including experienced roboticists. 
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <video poster="" id="tree" autoplay controls muted loop height="60%">
+              <source src="static/videos/gdg_results.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre>
+      <code>
+        
+      </code>
+    </pre>
+  </div>
+</section> -->
+
+</body>
+</html>
