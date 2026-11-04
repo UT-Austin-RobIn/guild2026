@@ -2,40 +2,35 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="">
+  <meta name="description" content="GUILD is a Guided Data Collection method that uses VLM task proposals and predictive data attribution to decide what robot data to collect next.">
   <meta property="og:title" content="GUILD: Guided Iterative Data Collection for Imitation Learning"/>
-  <meta property="og:description" content="GUILD: Guided Iterative Data Collection for Imitation Learning"/>
+  <meta property="og:description" content="What data should you collect next to improve your robot policy? GUILD closes the data collection loop with VLM task proposals and predictive data attribution."/>
   <meta property="og:url" content=""/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-
+  <meta property="og:image" content="static/images/overall_fig.png"/>
 
   <meta name="twitter:title" content="GUILD: Guided Iterative Data Collection for Imitation Learning">
-  <meta name="twitter:description" content="GUILD: Guided Iterative Data Collection for Imitation Learning">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <!-- <meta name="twitter:image" content="">
-  <meta name="twitter:card" content="summary_large_image"> -->
-  <!-- Keywords for your paper to be indexed by-->
+  <meta name="twitter:description" content="What data should you collect next to improve your robot policy? GUILD closes the data collection loop with VLM task proposals and predictive data attribution.">
+  <meta name="twitter:image" content="static/images/overall_fig.png">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="keywords" content="Guided Data Collection, Data Attribution, Imitation Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-  <title>Guided Iterative Data Collection for Imitation Learning</title>
+  <title>GUILD: Guided Iterative Data Collection for Imitation Learning</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
@@ -43,71 +38,118 @@
 </head>
 <body>
 
+<!-- ============================== HEADER ============================== -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span class="guild">GUILD</span></h1>
+          <h2 class="subtitle is-2 publication-subtitle">Guided Iterative Data Collection for Imitation Learning</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://shivindass.github.io/" target="_blank">Shivin Dass</a>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/kevin-nguyen-ut" target="_blank">Kevin Nguyen</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/rohan-yelandur" target="_blank">Rohan Yelandur</a><sup>*</sup>,</span>
+            <br>
+            <span class="author-block">
+              <a href="https://junhongxu.github.io/" target="_blank">Junhong Xu</a>,</span>
+            <span class="author-block">
+              <a href="https://robertomartinmartin.com/" target="_blank">Roberto Martín-Martín</a></span>
+          </div>
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <sup><font size="-0.4">*</font></sup>
+              <font size="-0.4"> Denotes Equal Contribution</font>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">The University of Texas at Austin
+              <br> CoRL, 2026
+            </span>
+          </div>
+
           <div class="column has-text-centered">
-            <!-- <h1 class="title is-1 publication-title"></h1> -->
-            <h1 class="title is-1 publication-title"><span style="color:#1e5790; font-weight: 900;">GUILD</span></h1>
-            <h2 class="subtitle is-2 publication-subtitle">Guided Iterative Data Collection for Imitation Learning</h2>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="https://shivindass.github.io/" target="_blank">Shivin Dass</a>,</span>
-              <span class="author-block">
-                <a href="https://www.linkedin.com/in/kevin-nguyen-ut" target="_blank">Kevin Nguyen</a><sup>*</sup>,</span>
-              <span class="author-block">
-                <a href="https://www.linkedin.com/in/rohan-yelandur" target="_blank">Rohan Yelandur</a><sup>*</sup>,</span>
-              <br>
-              <span class="author-block">
-                  <a href="https://junhongxu.github.io/" target="_blank">Junhong Xu</a>,</span>
-              <span class="author-block">
-                <a href="https://robertomartinmartin.com/" target="_blank">Roberto Martín-Martín</a></span>
-            </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <sup><font size="-0.4">*</font></sup>
-                <font size="-0.4">Equal Contribution</font>
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="static/pdfs/guild_paper.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
               </span>
-            </div> 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">The University of Texas at Austin
-                <br> CoRL, 2026
+              <!-- TODO: uncomment and fill in once available
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
               </span>
-              <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+              <span class="link-block">
+                <a href="https://github.com/XXXX" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              -->
+              <span class="link-block">
+                <a href="#video" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-video"></i></span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#BibTeX" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-quote-right"></i></span>
+                  <span>BibTeX</span>
+                </a>
+              </span>
             </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============================== TEASER / TL;DR ============================== -->
 <section class="section hero is-light">
   <div class="container">
-    <h2 class="title is-2" style="text-align: center;">TL;DR</h2>
     <div class="columns is-centered">
-      <div class="column is-four-fifths is-centered has-text-centered">
-        <div class="content has-text-justified">
+      <div class="column is-four-fifths has-text-centered">
+        <video class="figure-video" autoplay controls muted loop playsinline>
+          <source src="static/videos/teaser.mp4" type="video/mp4">
+        </video>
+        <p class="figure-caption">
+          <span class="guild">GUILD</span> decides <em>what data to collect next</em> by proposing tasks,
+          evaluating the collected data and steering the collection budget toward an (unknown) optimal data distribution.
+        </p>
+      </div>
+    </div>
+    <h2 class="title is-2 section-title">TL;DR</h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified blog">
           <p>
-            Imitation learning policies in robotics are trained on datasets collected through costly real-world teleoperation. 
-            Often, the data-collection process is unguided, relying on the teleoperator's intuition, resulting in data that contributes little to overall policy performance. 
-            Recent work has shown that curating such unguided datasets can substantially improve policy performance, but these approaches operate by filtering existing datasets after collection and therefore do not prevent the acquisition of uninformative data. 
-            In this work, we propose GUILD, a novel Guided Data Collection (GDC) method that actively reasons about which data should be collected to maximize downstream policy performance.
-            We introduce an iterative framework that alternates between 1) task proposal and data collection and 2) data evaluation to close the loop. 
-            For task proposal, we leverage semantic priors from vision-language models to identify relevant environments, object configurations, and goals for data collection. 
-            However, since semantic relevance does not imply policy improvement, we perform data evaluation. By leveraging predictive data attribution we approximate how the collected trajectories influence policy performance on a target deployment setting. 
-            This signal is then used as feedback to guide subsequent data collection, closing the data collection loop. 
+            Robot policies are only as good as the data they are trained on, yet robot data collection is mostly <strong>unguided</strong>:
+            teleoperators collect whatever their intuition suggests, and much of that data ends up contributing little to the final policy.
+            We propose <span class="guild">GUILD</span>, a <strong>Guided Data Collection (GDC)</strong> method that actively reasons about
+            <em>which</em> data should be collected to maximize performance in a target deployment setting.
+            <span class="guild">GUILD</span> runs a closed loop that alternates between
+            <strong>(1) task proposal and data collection</strong>, using semantic priors from a vision-language model (VLM), and
+            <strong>(2) data evaluation</strong>, using predictive data attribution to estimate how each collected trajectory affects
+            deployment performance. The evaluation signal is fed back to guide the next round of collection.
           </p>
-        </div>
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <video poster="" id="tree" autoplay controls muted loop height="60%">
-              <source src="static/videos/gdg_video.mp4"
-              type="video/mp4">
-            </video>
+          <div class="key-findings">
+            <p class="key-findings-title">Key findings</p>
+            <ul>
+              <li>Across simulation (LIBERO) and the real world, <span class="guild">GUILD</span> matches or beats every baseline under the same data budget.</li>
+              <li>In the real world, it even outperforms training on <em>all</em> available data, including data from the target environment.</li>
+              <li>It beats <strong>8 roboticists</strong> in simulation and <strong>2 experienced experts</strong> in the real world at allocating a data collection budget.</li>
+              <li>Adding attribution-based evaluation on top of VLM task proposals improves real-world open-world success by about <strong>25%</strong>.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -115,93 +157,583 @@
   </div>
 </section>
 
-<section class="section hero">
+<!-- ============================== MOTIVATION ============================== -->
+<section class="section hero" id="motivation">
   <div class="container">
-    <!-- <h2 class="title is-2" style="text-align: center;">GUILD: <span style="color:#1e5790; font-weight: 900;">G</span>uided <span style="color:#1e5790; font-weight: 900;">I</span>terative Imitation  <span style="color:#1e5790; font-weight: 900;">L</span>earning <span style="color:#1e5790; font-weight: 900;">D</span>ata Collection</h2> -->
-    <h2 class="title is-2" style="text-align: center;"><span style="color:#1e5790; font-weight: 900;">GUILD</span> Summary</h2>
+    <h2 class="title is-2 section-title">What data should you <span class="highlight">collect next</span>?</h2>
     <div class="columns is-centered">
-      <div class="column is-four-fifths is-centered has-text-centered">
-        <div class="content has-text-justified">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified blog">
           <p>
-            GUILD operates in an iterative loop that alternates between task proposal and data collection, and data evaluation. 
-            For task proposal, GUILD leverages semantic priors from vision-language models to identify relevant environments, object configurations, and goals for data collection. 
-            However, since semantic relevance does not necessarily imply policy improvement, GUILD performs data evaluation by leveraging predictive data attribution to approximate how the collected trajectories influence policy performance on a target deployment setting. 
-            This signal is then used as feedback to guide subsequent data collection, closing the data collection loop.
+            Imagine you want a robot to work in someone's kitchen. That kitchen is where the robot will ultimately be deployed,
+            but collecting hundreds of demonstrations there is rarely practical: privacy, safety, cost and plain access all get in the way.
+            What you <em>do</em> usually have are other places where data is easy to collect, such as lab spaces, mock setups or other apartments.
+            These environments are useful, but they are not the deployment environment.
           </p>
         </div>
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <img src="static/images/gdg_overall.png" alt="overall" width="100%">
-          </div>
+        <video class="figure-video" autoplay controls muted loop playsinline>
+          <source src="static/videos/motivation.mp4" type="video/mp4">
+        </video>
+        <div class="content has-text-justified blog">
+          <p>
+            So the real question is not "how do we collect <em>more</em> data?" but
+            <strong>"what data should we collect in the accessible environments so that it transfers best to the deployment task?"</strong>
+          </p>
+          <p>
+            The default answer in robot learning has been to collect broadly and rely on scale. But recent work in machine learning
+            and robotics shows that <em>carefully curated</em> datasets can beat much larger, unfiltered ones when targeting a specific
+            downstream domain: not all demonstrations are equally useful. The catch is that existing curation methods are
+            <strong>post-hoc filters</strong>. They identify the useful subset only <em>after</em> the data has been collected,
+            so the cost of collecting the discarded data has already been paid. Experienced roboticists, on the other hand, rely
+            on intuition about what to collect, but that intuition is hard to formalize, expensive to acquire and, as we show below,
+            not always reliable.
+          </p>
+          <p>
+            We want to move curation <em>upstream</em>: instead of filtering data after collection, guide humans toward
+            collecting the most useful demonstrations in the first place.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section hero">
+<!-- ============================== PROBLEM ============================== -->
+<section class="section hero is-light" id="problem">
   <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Simulating Data Collection via <span style="color:#1e5790; font-weight: 900;">GUILD</span></h2>
+    <h2 class="title is-2 section-title">The Guided Data Collection Problem</h2>
     <div class="columns is-centered">
-      <div class="column is-four-fifths is-centered has-text-centered">\
-        <div class="content has-text-justified">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified blog">
           <p>
-            We show a few steps of the GUILD data collection loop to give an insight into how it operates.
-            In the first step of task proposal, GUILD creates an initial support set of commonsense-grounded tasks using a VLM and available information about the target task as well as training task assets and available objects.
-            
-            Since the initial proposals are merely a guess, we then perform data evaluation by using predictive data attribution to estimate how the collected trajectories influence policy performance on the target deployment setting.
-            The data evaluation step identifies which tasks are important from the support set providing more granular feedback to the data collector on which tasks to collect data on in the next iteration.
+            <strong>Guided Data Collection (GDC)</strong> asks which data to collect in the data collection environments to
+            maximize performance on the deployment task. Formally, we are given:
+          </p>
+          <ul class="def-list">
+            <li>$\mathcal{D}$: the current dataset,</li>
+            <li>$\mathcal{D}'$: the new data to collect in the data collection environments, under a fixed budget $k = |\mathcal{D}'|$,</li>
+            <li>$\mathcal{A}$: the learning algorithm, which maps a dataset to a policy, $\pi = \mathcal{A}(\mathcal{D})$,</li>
+            <li>$\mathcal{M}$: the performance metric, which measures deployment performance of a policy (e.g. success rate).</li>
+          </ul>
+          <p>The goal is to find the new data that most improves the policy once it is added to the training set:</p>
+          <p class="equation">
+            $$\arg\max_{\mathcal{D}'} \; \mathcal{M}\Big(\mathcal{A}\big(\mathcal{D} \cup \mathcal{D}'\big)\Big) \quad \text{s.t.} \quad |\mathcal{D}'| = k$$
           </p>
         </div>
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <video poster="" id="tree" autoplay controls muted loop height="60%">
-              <source src="static/videos/gdg_sim.mp4"
-              type="video/mp4">
-            </video>
-          </div>
+        <div class="content has-text-justified blog">
+          <p>
+            We model collection through a generator $\tau \sim \mathcal{G}(\phi)$, where the <strong>task parameters</strong> $\phi$
+            specify the environment, scene and object configuration, and the task goal. In our experiments the generator is a
+            human teleoperator, but it could equally be a scripted controller, a motion planner or an autonomous policy.
+            Because transferring across domains typically requires <em>diverse</em> data, we do not optimize a single task. Instead we optimize a
+            <strong>distribution over tasks</strong> $p_\theta(\phi)$, and the objective becomes:
+          </p>
+          <p class="equation">
+            $$\arg\max_\theta \; \mathcal{M}\Big(\mathcal{A}\big(\mathcal{D} \cup \mathcal{D}'_\theta\big)\Big), \qquad \mathcal{D}'_\theta \sim \mathcal{G}(\phi),\; \phi \sim p_\theta(\phi)$$
+          </p>
+          <p>
+            This turns data collection itself into an optimization problem. It is also a hard one: the space of possible
+            environments, object placements and goals is huge and open-ended, and evaluating any candidate dataset normally means training
+            a policy and rolling it out in the deployment environment, which is exactly what we cannot afford to do often.
+            We assume only a <strong>small target dataset</strong> $\mathcal{D}_{\text{targ}}$ from the deployment setting.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section hero">
+<!-- ============================== METHOD ============================== -->
+<section class="section hero" id="method">
   <div class="container">
-    <h2 class="title is-2" style="text-align: center;"><span style="color:#1e5790; font-weight: 900;">Real-World</span> Results</h2>
+    <h2 class="title is-2 section-title"><span class="guild">GUILD</span>: Closing the Data Collection Loop</h2>
     <div class="columns is-centered">
-      <div class="column is-four-fifths is-centered has-text-centered">
-        <div class="content has-text-justified">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified blog">
           <p>
-            We design 6 real-world scenes with different objects, layouts, and backgrounds.
-            Given a target task in a deployment setting, we generate data from the remaining scenes using GUILD and a set of baselines. 
-            We then evaluate the performance of policies trained on this data in the target deployment setting.
-            Across both the simulation (see paper) and real-world settings, we find that GUILD outperforms other baselines including experienced roboticists. 
+            <span class="guild">GUILD</span> splits the problem into two complementary pieces and interleaves them in a closed loop:
+            <strong>task-space exploration</strong> using a VLM, which decides <em>where</em> it could be worth collecting data, and
+            <strong>data evaluation</strong> using predictive data attribution, which decides <em>how much</em> data each of those tasks
+            deserves.
           </p>
         </div>
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <video poster="" id="tree" autoplay controls muted loop height="60%">
-              <source src="static/videos/gdg_results.mp4"
-              type="video/mp4">
-            </video>
-          </div>
+        <video class="figure-video" autoplay controls muted loop playsinline>
+          <source src="static/videos/overview.mp4" type="video/mp4">
+        </video>
+
+        <h3 class="title is-4 subsection-title"><span class="step-badge">1</span> Commonsense-grounded task proposals</h3>
+        <div class="content has-text-justified blog">
+          <p>
+            The space of task parameters $\phi$ is far too large to enumerate. <span class="guild">GUILD</span> gives a VLM the
+            target-domain context (a demonstration video, a language description of the target task and a specification of the
+            available environments and objects) and asks it to propose a set of feasible collection tasks
+            $\mathcal{T}_i = \{\phi_1, \dots, \phi_n\}$. Each proposal specifies <em>which environment</em> to collect in,
+            <em>how to set up the scene</em> and <em>what manipulation task</em> to demonstrate.
+          </p>
+          <p>
+            Importantly, the VLM is <strong>not</strong> asked how much data to collect per task. It only defines the
+            <em>support</em> of the collection distribution, i.e. the promising regions of the task space. Semantic relevance is a
+            good prior, but it does not guarantee that the data will actually improve the policy. That is what the next step measures.
+          </p>
+        </div>
+
+        <h3 class="title is-4 subsection-title"><span class="step-badge">2</span> Data evaluation via predictive attribution</h3>
+        <div class="content has-text-justified blog">
+          <p>
+            After a few demonstrations are collected for each proposed task, <span class="guild">GUILD</span> estimates how useful
+            each trajectory is for the deployment task without training and rolling out a new policy for every candidate dataset.
+            We use <strong>MAGIC</strong>, a metagradient-based data attribution method. Each trajectory $\tau_k$ gets a weight
+            $w_k \in [0, 1]$, and a first-order Taylor expansion around the full dataset ($\mathbf{w}_0 = \mathbf{1}$) gives
+          </p>
+          <p class="equation">
+            $$\mathcal{M}\big(\mathcal{A}(\mathbf{w})\big) \approx \mathcal{M}\big(\mathcal{A}(\mathbf{w}_0)\big) + \underbrace{\nabla_\mathbf{w}\mathcal{M}\big(\mathcal{A}(\mathbf{w}_0)\big)}_{\mathcal{I}}{}^{\top}(\mathbf{w} - \mathbf{w}_0).$$
+          </p>
+          <p>
+            Each entry $\mathcal{I}_k$ tells us how much (infinitesimally) up-weighting trajectory $\tau_k$ would change deployment
+            performance. Since rollouts in the deployment environment are expensive, $\mathcal{M}$ is replaced by an offline proxy:
+            the policy's loss on the small target dataset $\mathcal{D}_{\text{targ}}$.
+            Because data is collected per task, trajectory scores are averaged into a <strong>marginal task utility</strong>:
+          </p>
+          <p class="equation">
+            $$U(\phi) = \frac{1}{|\mathcal{D}_\phi|} \sum_{\tau_k \in \mathcal{D}_\phi} \mathcal{I}_k$$
+          </p>
+          <p>
+            $U(\phi)$ approximates the benefit of collecting <em>one more</em> trajectory from task $\phi$, given the current dataset.
+            Tasks with high utility should receive more of the collection budget, and tasks with low or negative utility should receive less.
+          </p>
+        </div>
+
+        <h3 class="title is-4 subsection-title"><span class="step-badge">3</span> Iterate on two timescales</h3>
+        <div class="content has-text-justified blog">
+          <p>
+            Attribution scores are <em>local</em>: they depend on what is already in the dataset. Once a high-utility task has
+            been covered well, its marginal value drops. <span class="guild">GUILD</span> therefore collects data in small batches
+            and recomputes utilities after every batch:
+          </p>
+          <ul>
+            <li>
+              <strong>Inner loop (refine the distribution):</strong> compute $U(\phi)$ for every task in the current support,
+              ask the teleoperator to collect a small batch on $\phi^*_j \in \arg\max_{\phi \in \mathcal{T}_i} U(\phi)$,
+              add it to the dataset, repeat.
+            </li>
+            <li>
+              <strong>Outer loop (expand the support):</strong> every $K$ inner steps, query the VLM again, this time also giving it
+              the <em>ranked list of previously evaluated tasks</em>. This feedback steers new proposals toward regions related to
+              high-utility tasks, while still allowing genuinely new ideas.
+            </li>
+          </ul>
+        </div>
+        <video class="figure-video narrow" autoplay controls muted loop playsinline>
+          <source src="static/videos/loop.mp4" type="video/mp4">
+        </video>
+        <p class="figure-caption">
+          The VLM proposes an initial task support (green), data evaluation refines how much data each task gets, and feedback-driven
+          support expansion adds new tasks (yellow) whose allocation is then refined again.
+        </p>
+
+        <h3 class="title is-4 subsection-title">Putting it all together</h3>
+        <img src="static/images/overall_fig.png" alt="GUILD pipeline overview" class="figure-img">
+        <p class="figure-caption">
+          <strong>Overview of the <span class="guild">GUILD</span> pipeline.</strong> Given a limited-access deployment setting and a set of
+          accessible data collection environments, <span class="guild">GUILD</span> uses VLM priors to propose candidate scenes, object
+          placements and tasks. Collected trajectories are evaluated with predictive data attribution to estimate their influence on
+          deployment-task performance. These scores guide subsequent collection (inner loop) and task proposals (outer loop), closing the loop.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SETUP ============================== -->
+<section class="section hero is-light" id="setup">
+  <div class="container">
+    <h2 class="title is-2 section-title">Experimental Setup</h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified blog">
+          <p>
+            We evaluate <span class="guild">GUILD</span> in two settings. For each target task, the deployment scene is
+            <strong>held out</strong>: all new data must be collected in the <em>other</em> scenes, and only a small set of target
+            demonstrations is available.
+          </p>
+          <ul>
+            <li>
+              <strong>Simulation (LIBERO):</strong> 17 scenes from LIBERO-90 across kitchens, living rooms and studies. We choose three
+              target tasks (<code>book-caddy</code>, <code>soup-butter-tray</code>, <code>bowl-ketchup-drawer</code>) and collect data
+              with scripted pick-and-place policies in the remaining 16 scenes.
+            </li>
+            <li>
+              <strong>Real world:</strong> 6 scenes with two layouts each of kitchens, bathrooms and offices, with different objects,
+              layouts and backgrounds, and 4 target tasks.
+            </li>
+          </ul>
+        </div>
+
+        <div class="scene-grid">
+          <figure><img src="static/images/scenes/k1.jpg" alt="Kitchen 1"><figcaption>Kitchen 1</figcaption></figure>
+          <figure><img src="static/images/scenes/k2.jpg" alt="Kitchen 2"><figcaption>Kitchen 2</figcaption></figure>
+          <figure><img src="static/images/scenes/b1.jpg" alt="Bathroom 1"><figcaption>Bathroom 1</figcaption></figure>
+          <figure><img src="static/images/scenes/b2.jpg" alt="Bathroom 2"><figcaption>Bathroom 2</figcaption></figure>
+          <figure><img src="static/images/scenes/o1.jpg" alt="Office 1"><figcaption>Office 1</figcaption></figure>
+          <figure><img src="static/images/scenes/o2.jpg" alt="Office 2"><figcaption>Office 2</figcaption></figure>
+        </div>
+        <p class="figure-caption">The six real-world data collection environments (robot camera view).</p>
+
+        <h3 class="title is-4 subsection-title">Real-world target tasks</h3>
+        <div class="video-grid four">
+          <figure>
+            <video autoplay muted loop playsinline><source src="static/videos/real/targets/b2_put_pink_cup_in_sink.mp4" type="video/mp4"></video>
+            <figcaption><code>pink-cup-sink</code><br><span class="muted">Bathroom 2</span></figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline><source src="static/videos/real/targets/b1_put_blue_towel_in_drawer_and_close_it.mp4" type="video/mp4"></video>
+            <figcaption><code>towel-drawer-close</code><br><span class="muted">Bathroom 1</span></figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline><source src="static/videos/real/targets/o1_pour_contents_of_black_bowl_in_drawer.mp4" type="video/mp4"></video>
+            <figcaption><code>bowl-pour</code><br><span class="muted">Office 1</span></figcaption>
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline><source src="static/videos/real/targets/b1_put_lemon_in_drawer_and_close_it.mp4" type="video/mp4"></video>
+            <figcaption><code>lemon-drawer-close</code><br><span class="muted">Bathroom 1</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="content has-text-justified blog">
+          <p>
+            <strong>Policy &amp; training.</strong> We fine-tune a language-conditioned <strong>Octo</strong> policy from its pretrained
+            checkpoint, co-training on the collected data and the target demonstrations with a 50/50 sampling mixture.
+          </p>
+          <p><strong>Baselines.</strong> All methods get the same collection budget.</p>
+          <ul>
+            <li><strong>Random</strong>: samples random objects and semantically valid placements, collecting data uniformly.</li>
+            <li><strong>VLM-Uniform</strong>: same VLM task proposer as <span class="guild">GUILD</span> (GPT-5.2), but collects uniformly across proposals, with <em>no</em> data evaluation.</li>
+            <li><strong>STRAP</strong>: evaluates task relevance via DINOv2 embedding similarity to the target data.</li>
+            <li><strong>FSC</strong> (Factored Scaling Curves): estimates task utility by training policies on varying amounts of per-task data and fitting scaling behavior.</li>
+            <li><strong>Human experts</strong>: roboticists given the same information as the GDC methods, asked to propose tasks and allocate the budget.</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- <section class="section" id="BibTeX">
+<!-- ============================== RESULTS ============================== -->
+<section class="section hero" id="results">
+  <div class="container">
+    <h2 class="title is-2 section-title">Results</h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+
+        <h3 class="title is-4 subsection-title question">Can <span class="guild">GUILD</span> efficiently guide data collection in simulation?</h3>
+        <div class="content has-text-justified blog">
+          <p>
+            On LIBERO, the figure below plots policy success against the number of collected trajectories.
+            <strong>Random</strong> is far behind everything else, while <strong>VLM-Uniform</strong> is already a strong baseline,
+            so VLM semantic priors alone provide a lot of signal for <em>where</em> to collect. Adding principled data evaluation
+            helps further: both FSC and <span class="guild">GUILD</span> beat STRAP and the no-evaluation baselines, and
+            <span class="guild">GUILD</span> matches or exceeds the strongest baseline across all tasks and budgets.
+          </p>
+        </div>
+        <img src="static/images/libero_results.png" alt="LIBERO results" class="figure-img">
+        <p class="figure-caption">
+          <strong>LIBERO guided data collection.</strong> For each method and task we run 3 data collection seeds. Each evaluation
+          trains 5 policies and averages their performance over 100 rollouts. Shaded regions show the standard error across seeds.
+        </p>
+
+        <h3 class="title is-4 subsection-title question">How well does <span class="guild">GUILD</span> guide real-world data collection?</h3>
+        <div class="content has-text-justified blog">
+          <p>We evaluate in two real-world settings:</p>
+          <ul>
+            <li>
+              <strong>Closed-world:</strong> methods can only <em>select</em> tasks from a fixed, pre-collected pool, so "collecting"
+              a task means sampling its trajectories from that pool.
+            </li>
+            <li>
+              <strong>Open-world:</strong> methods freely <em>specify</em> new tasks (environment, object configuration and goal),
+              and a teleoperator collects fresh data for them.
+            </li>
+          </ul>
+          <p>
+            <strong>Closed-world.</strong> To compare many methods without re-collecting data for each of them, we build an offline
+            pool of <strong>49 tasks</strong> across the six environments. Policies are evaluated over 20 real rollouts (solid bars below).
+            The results mirror simulation: <span class="guild">GUILD</span> achieves the best performance under the same budget. It also
+            outperforms <strong>All-Data</strong>, a policy trained on the <em>entire</em> pool including data from the target
+            environment, which shows that targeted collection can beat indiscriminate scaling.
+          </p>
+          <p>
+            <strong>Open-world.</strong> This is the setting we ultimately care about, since <span class="guild">GUILD</span> is no
+            longer limited to what has already been collected. Because every method needs its own newly collected real-world data, we
+            compare <span class="guild">GUILD</span> against VLM-Uniform and two human experts (hatched bars).
+          </p>
+        </div>
+        <img src="static/images/real_results.png" alt="Real-world results" class="figure-img">
+        <p class="figure-caption">
+          <strong>Real-world guided data collection.</strong> Hatched bars: open-world collection. Solid bars: closed-world selection from
+          a fixed task pool. <span class="guild">GUILD</span> achieves the highest success under the same data budget.
+        </p>
+        <div class="content has-text-justified blog">
+          <p>Two trends stand out:</p>
+          <ol>
+            <li>
+              <strong>Evaluation matters.</strong> <span class="guild">GUILD</span> consistently outperforms VLM-Uniform on every task,
+              improving average success by about <strong>25%</strong>. Semantic relevance alone is not enough.
+            </li>
+            <li>
+              <strong>More control helps.</strong> Both methods do better in the open-world setting than in the corresponding
+              closed-world setting. Finer control over the task specification leads to more effective collection.
+            </li>
+          </ol>
+        </div>
+
+        <h3 class="title is-4 subsection-title question">How does <span class="guild">GUILD</span> compare to human-guided collection?</h3>
+        <div class="content has-text-justified blog">
+          <p>
+            Humans are still the dominant way of deciding what robot data to collect, so we put <span class="guild">GUILD</span>
+            head to head with them. In LIBERO we surveyed <strong>8 roboticists</strong> (1 to 5+ years of experience), gave them
+            the same information available to the GDC methods and asked them to propose tasks and split a fixed budget.
+          </p>
+          <p>
+            On average, humans fall short of <span class="guild">GUILD</span>, which suggests that attribution-based evaluation
+            is a stronger signal than intuition. Interestingly, <strong>VLM-Uniform closely matches the average human</strong>:
+            modern VLMs capture much of the commonsense reasoning experts use, which makes them a strong starting point for the GDC
+            process.
+          </p>
+        </div>
+        <img src="static/images/human_all_tasks.png" alt="Task-wise human comparison" class="figure-img">
+        <div class="chart-legend">
+          <span><i style="background:#d62728"></i>GUILD</span>
+          <span><i style="background:#f89e51"></i>FSC</span>
+          <span><i style="background:#598ce8"></i>VLM-Uniform</span>
+          <span><i style="background:#ad8ecc"></i>STRAP</span>
+          <span><i style="background:linear-gradient(90deg,#b2b2b2,#5f5f5f)"></i>Humans</span>
+          <span><i class="dashed"></i>Human average</span>
+        </div>
+        <p class="figure-caption">
+          <strong>Human-guided data collection on LIBERO.</strong> Success rate per task and on average. Gray bars are individual human
+          participants, and the dashed line is the human average.
+        </p>
+        <div class="content has-text-justified blog">
+          <p>
+            Human performance also varies a lot <em>across tasks</em>: participants who do well on one task often do not do as well
+            on another. The same holds in the real world, where we compared against 2 experts with 4 to 5 years of robotics experience (see real world results from earlier). For example,
+            <strong>Expert 1</strong> is strong on <code>towel-drawer-close</code> but weak on <code>pink-cup-sink</code>.
+            Individual experts may occasionally beat <span class="guild">GUILD</span> on a specific task, but <span class="guild">GUILD</span>
+            provides a <strong>reliable, systematic</strong> mechanism that does well across all of them.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== QUALITATIVE ============================== -->
+<section class="section hero is-light" id="analysis">
+  <div class="container">
+    <h2 class="title is-2 section-title">What Data Does <span class="guild">GUILD</span> Collect?</h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified blog">
+          <p>
+            Below we show the final data composition <span class="guild">GUILD</span> collected for each real-world target in the
+            open-world setting. Each bar is one auxiliary task and its height is the number of trajectories collected for it.
+            The color shows the outer-loop iteration in which the task was first proposed. <span class="guild">GUILD</span> consistently
+            prioritizes tasks that share semantic and behavioral structure with the target, such as similar objects, receptacles or
+            manipulation patterns, even when they come from a completely different room.
+          </p>
+        </div>
+        <img src="static/images/real_qual.png" alt="Real-world data composition" class="figure-img">
+        <p class="figure-caption">
+          <strong>Real-world data composition.</strong> Top: target task. Middle: trajectories allocated per auxiliary task, colored by the
+          iteration in which the task was introduced. Bottom: the highest-allocation auxiliary tasks.
+        </p>
+
+        <div class="content has-text-justified blog">
+          <p>
+            <strong>Useful tasks are discovered throughout collection.</strong> The best tasks are not always in the initial proposal
+            set. For <code>pink-cup-sink</code>, one of the highest-allocation tasks only appears in a later support-expansion round,
+            and for <code>bowl-pour</code> the <em>two</em> largest allocations both come from tasks introduced after initialization.
+            Iterative support expansion matters.
+          </p>
+          <p>
+            <strong>The shape of a good dataset depends on the target.</strong> For <code>bowl-pour</code> and
+            <code>lemon-drawer-close</code> the budget is concentrated on a handful of tasks, while for <code>pink-cup-sink</code>
+            and <code>towel-drawer-close</code> it is spread across many. No fixed heuristic, whether uniform sampling or picking the single
+            top-ranked task, would get both right. This is why we treat data collection as an <em>adaptive allocation</em> problem.
+          </p>
+        </div>
+
+        <h3 class="title is-4 subsection-title">Browse the collected data</h3>
+        <p class="has-text-centered muted">Pick a target task to see the auxiliary tasks <span class="guild">GUILD</span> asked the teleoperator to collect.</p>
+        <div class="tabs is-centered is-toggle is-small gallery-tabs">
+          <ul id="gallery-tabs">
+            <li class="is-active" data-target="b2_pink"><a>pink-cup-sink</a></li>
+            <li data-target="b1_towel"><a>towel-drawer-close</a></li>
+            <li data-target="o1_bowl"><a>bowl-pour</a></li>
+            <li data-target="b1_lemon"><a>lemon-drawer-close</a></li>
+          </ul>
+        </div>
+        <div class="gallery-target">
+          <video id="gallery-target-video" autoplay muted loop playsinline></video>
+          <div class="gallery-target-text">
+            <p class="gallery-target-label">Target task</p>
+            <p class="gallery-target-name" id="gallery-target-name"></p>
+            <p class="muted" id="gallery-target-scene"></p>
+            <p class="gallery-target-note">
+              Deployment scene held out. Every clip below was collected in the <em>other</em> environments.
+            </p>
+          </div>
+        </div>
+        <p class="gallery-subhead">Data collected by <span class="guild">GUILD</span></p>
+        <div class="video-grid six" id="gallery"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ABLATIONS ============================== -->
+<section class="section hero" id="ablations">
+  <div class="container">
+    <h2 class="title is-2 section-title">Ablations &amp; Analysis</h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified blog">
+          <p>We ablate key design choices on LIBERO (success rate of policies trained on the final dataset, mean &plusmn; std. error).</p>
+        </div>
+        <div class="table-container">
+          <table class="table is-fullwidth is-hoverable ablation-table">
+            <thead>
+              <tr><th>Variant</th><th>book-caddy</th><th>soup-butter-tray</th><th>bowl-ketchup-drawer</th><th>Average</th></tr>
+            </thead>
+            <tbody>
+              <tr class="is-ours"><td><span class="guild">GUILD</span></td><td><b>68.2</b> &plusmn; 1.3</td><td><b>69.6</b> &plusmn; 3.6</td><td>56.9 &plusmn; 1.8</td><td><b>64.9</b></td></tr>
+              <tr><td><span class="guild">GUILD</span> (soft-sampling)</td><td>66.1 &plusmn; 0.5</td><td>63.2 &plusmn; 2.3</td><td>54.7 &plusmn; 4.5</td><td>61.3</td></tr>
+              <tr><td><span class="guild">GUILD</span> (no-feedback)</td><td>65.5 &plusmn; 1.1</td><td>55.3 &plusmn; 3.9</td><td>56.9 &plusmn; 1.7</td><td>59.2</td></tr>
+              <tr><td><span class="guild">GUILD</span> (Gemini-2.5-Flash)</td><td>67.2 &plusmn; 2.0</td><td>52.2 &plusmn; 1.5</td><td><b>63.8</b> &plusmn; 0.6</td><td>61.1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="content has-text-justified blog">
+          <ul>
+            <li>
+              <strong>Feedback-driven support expansion helps.</strong> Removing the ranked-task feedback from the VLM matches or hurts
+              performance on every task, by about 15% on <code>soup-butter-tray</code>. VLMs <em>can</em> use attribution feedback to make better proposals.
+            </li>
+            <li>
+              <strong>Hard vs. soft sampling.</strong> Sampling tasks with a softmax over utilities performs similarly but is sensitive
+              to the temperature. We use the simpler, more robust hard (arg-max) selection.
+            </li>
+            <li>
+              <strong>Choice of VLM.</strong> Swapping GPT-5.2 for Gemini-2.5-Flash shifts task-wise results in both directions
+              (better on <code>bowl-ketchup-drawer</code>, worse on <code>soup-butter-tray</code>) but stays competitive on average.
+              <span class="guild">GUILD</span> is not tied to a specific VLM, and better proposers should directly translate into better collection.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VIDEO ============================== -->
+<section class="section hero is-light" id="video">
+  <div class="container">
+    <h2 class="title is-2 section-title">Video Summary</h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <video class="figure-video" controls muted playsinline preload="metadata">
+          <source src="static/videos/gdg_video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== BIBTEX ============================== -->
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre>
-      <code>
-        
-      </code>
-    </pre>
+    <pre><code>@inproceedings{dass2026guild,
+  title     = {GUILD: Guided Iterative Data Collection for Imitation Learning},
+  author    = {Dass, Shivin and Nguyen, Kevin and Yelandur, Rohan and Xu, Junhong and Mart{\'i}n-Mart{\'i}n, Roberto},
+  booktitle = {Conference on Robot Learning (CoRL)},
+  year      = {2026}
+}</code></pre>
   </div>
-</section> -->
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered is-size-7">
+          <p>
+            This work was conducted in the Robot Interactive Intelligence (RobIn) Lab at The University of Texas at Austin and
+            supported in part by the National Science Foundation (CAREER Award FAIN 2543745), the NVIDIA Academic Grant Program
+            and TACC resources, and Amazon.
+          </p>
+          <p>
+            Website template adapted from <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Collected-data gallery ----------
+  const SCENES = { k1: 'Kitchen 1', k2: 'Kitchen 2', b1: 'Bathroom 1', b2: 'Bathroom 2', o1: 'Office 1', o2: 'Office 2' };
+  const GALLERY = {
+    b2_pink: ['k2_put_white_cup_on_bottom_shelf', 'k1_put_white_cup_in_sink', 'k1_put_orange_in_sink', 'k1_move_coke_can_to_sink',
+              'b1_put_white_cup_in_sink', 'b1_put_black_bowl_in_sink', 'k1_put_black_bowl_in_sink', 'b1_put_sprite_can_in_sink',
+              'o1_put_white_cup_in_drawer', 'o2_put_white_cup_in_drawer', 'o1_put_blue_bowl_in_drawer', 'b1_put_blue_towel_in_drawer'],
+    b1_towel: ['o2_put_green_towel_in_drawer_and_close_it', 'o1_put_sprite_can_in_drawer_and_close_it', 'o2_put_blue_bowl_in_drawer_and_close_it',
+               'b2_put_green_towel_in_sink', 'o1_put_green_towel_in_drawer_and_close_it', 'o1_put_coke_can_in_drawer_and_close_it',
+               'o1_put_pink_cup_in_drawer_and_close_it', 'o1_put_white_cup_in_drawer_and_close_it', 'o2_put_white_cup_in_drawer_and_close_it',
+               'k1_drape_green_towel_over_sink', 'k1_put_green_towel_in_oven_and_close_it', 'k1_put_bread_in_sink'],
+    o1_bowl: ['b1_pour_white_cup_into_sink', 'b2_pour_blue_bowl_in_sink', 'o2_pour_blue_bowl_into_drawer', 'k1_pour_blue_bowl_on_plate',
+              'b1_pour_blue_bowl_into_drawer', 'b1_pour_white_cup_in_drawer', 'b2_pour_white_cup_in_sink', 'k1_pour_blue_bowl_into_sink',
+              'k2_pour_blue_bowl_on_cutting_board'],
+    b1_lemon: ['o2_put_orange_in_drawer_and_close_it', 'o2_put_coke_can_in_drawer_and_close_it', 'o1_put_orange_in_drawer_and_close_it',
+               'k2_put_bread_in_oven_and_close_it', 'o1_put_coke_can_in_drawer_and_close_it', 'o1_put_sprite_can_in_drawer_and_close_it',
+               'o1_put_white_cup_in_drawer_and_close_it', 'o1_open_drawer_and_place_pink_cup_in_it_and_close_it', 'o2_put_bread_in_drawer_and_close_it',
+               'k1_put_orange_in_oven_and_close_it', 'k1_put_black_bowl_in_sink', 'b2_put_green_towel_in_sink'],
+  };
+  function prettyTask(name) {
+    const s = name.slice(3).replace(/_/g, ' ');
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  const TARGETS = {
+    b2_pink:  { file: 'b2_put_pink_cup_in_sink', name: 'Put pink cup in sink' },
+    b1_towel: { file: 'b1_put_blue_towel_in_drawer_and_close_it', name: 'Put blue towel in drawer and close it' },
+    o1_bowl:  { file: 'o1_pour_contents_of_black_bowl_in_drawer', name: 'Pour contents of black bowl in drawer' },
+    b1_lemon: { file: 'b1_put_lemon_in_drawer_and_close_it', name: 'Put lemon in drawer and close it' },
+  };
+  function renderGallery(key) {
+    const t = TARGETS[key];
+    const tv = document.getElementById('gallery-target-video');
+    tv.src = `static/videos/real/targets/${t.file}.mp4`;
+    tv.play().catch(() => {});
+    document.getElementById('gallery-target-name').textContent = t.name;
+    document.getElementById('gallery-target-scene').textContent = 'Deployment scene: ' + SCENES[t.file.slice(0, 2)];
+    const el = document.getElementById('gallery');
+    el.innerHTML = GALLERY[key].map(n => `
+      <figure>
+        <video autoplay muted loop playsinline preload="auto"><source src="static/videos/real/collected/${key}/${n}.mp4" type="video/mp4"></video>
+        <figcaption>${prettyTask(n)}<br><span class="muted">${SCENES[n.slice(0, 2)]}</span></figcaption>
+      </figure>`).join('');
+  }
+  document.querySelectorAll('#gallery-tabs li').forEach(li => {
+    li.addEventListener('click', () => {
+      document.querySelectorAll('#gallery-tabs li').forEach(x => x.classList.remove('is-active'));
+      li.classList.add('is-active');
+      renderGallery(li.dataset.target);
+    });
+  });
+  renderGallery('b2_pink');
+</script>
 
 </body>
 </html>
