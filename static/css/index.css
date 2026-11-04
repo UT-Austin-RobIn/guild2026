@@ -382,3 +382,7 @@ html { scroll-behavior: smooth; }
 @media screen and (max-width: 600px) {
   .gallery-target { flex-direction: column; text-align: center; }
 }
+
+/* Mobile: stop wide content (e.g. equations) from widening the page */
+.hero > .container { min-width: 0; width: 100%; }
+.equation mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
